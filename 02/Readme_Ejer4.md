@@ -13,11 +13,17 @@ Roxs es la líder de un equipo de trabajo para una compañía que realiza Audito
 
 ## Solución
 
->👨‍💻 Como medida de seguridad a implementarse se debe cambiar los permisos de usuarios en el archivo *Lista_Precios*, mediante el uso del comando **`chmod`**
+>👨‍💻 Como medida de seguridad a implementarse se debe cambiar los permisos de usuarios en el archivo *Lista_Precios*, mediante el uso del comando **`chmod`**.
+>
 >👨‍💻 El tipo de usuarios al que debe cambiarse los permisos son grupo y otros
+>
 >👨‍💻 Los permisos que debe cambiarse son: Lectura, Escritura y Ejecución
->👨‍💻 E comando a ejecutar en la carpeta **`/home`** es: **`chmod u=rwx,go= Lista_Precios`**
+>
+>👨‍💻 El comando a ejecutar en la carpeta **`/home`** es: **`chmod u=rwx,go= Lista_Precios`**
+>
 >👨‍💻 No se especifica en que distibucion trabaja Roxs, por lo que este analisis se hara en base a >distros basadas en debian. Adicionalmente al cambio en permisos sobre el archivo se debe de tener en >cuenta que existe la posibilidad de que algunos usuarios tenga acceso a la cuenta **`root`** o bien >acceso a privilegios de **`root`**. Por lo que posibiblente Roxs deba hacer es:
->       👨‍💻 Quitar todos los otros usuarios del grupo Sudo: **`sudo deluser <<user>> sudo`**
->       👨‍💻 Cambiar el password del root **`root`**: **`sudo passwd root`**
->Con esto sera la unica con privilegio de root.
+>
+>- Quitar todos los otros usuarios del grupo Sudo: **`sudo deluser user sudo`**
+>- Cambiar el password del root **`root`**: **`sudo passwd root`**
+>       
+>Con esto sera la unica con privilegio de root, la unica con permisos **`rwx`** sobre el archivo *Lista_Precios* y los otros usuarios no podran acceder al mismo. 
